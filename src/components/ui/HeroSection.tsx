@@ -81,18 +81,18 @@ export default function HeroSection() {
         ========================================================================
       */}
       <section className="relative w-full flex-1 flex items-center overflow-hidden bg-[#11141a] min-h-[580px] lg:min-h-[620px]">
-        {/* Background Image Layer with Enhanced Brightness & Warmth */}
+        {/* Background Image Layer: Clean, Sharp Editorial Presentation */}
         <div
           className="absolute inset-0 bg-cover bg-no-repeat bg-[center_right_-20px] sm:bg-[center_right] lg:bg-[82%_20%]"
           style={{
             backgroundImage: "url('/images/adv_shweta_hero.jpg')",
-            filter: "brightness(1.15) contrast(1.06) saturate(1.14)",
+            filter: "brightness(1.08) contrast(1.03)",
           }}
         />
 
         {/* Luminous Warm Sunlight & Amber Radial Bloom: Illuminates Adv. Shweta & Law Library */}
-        <div className="absolute inset-0 z-0 pointer-events-none bg-[radial-gradient(ellipse_at_78%_35%,rgba(255,238,195,0.35)_0%,rgba(223,195,132,0.18)_35%,transparent_65%)]" />
-        <div className="absolute inset-0 z-0 pointer-events-none bg-[radial-gradient(ellipse_at_25%_25%,rgba(212,175,55,0.18)_0%,transparent_50%)]" />
+        <div className="absolute inset-0 z-0 pointer-events-none bg-[radial-gradient(ellipse_at_78%_35%,rgba(255,238,195,0.30)_0%,rgba(223,195,132,0.15)_35%,transparent_65%)]" />
+        <div className="absolute inset-0 z-0 pointer-events-none bg-[radial-gradient(ellipse_at_25%_25%,rgba(212,175,55,0.15)_0%,transparent_50%)]" />
 
         {/* Soft Left Vignette: ONLY covers text area to keep typography crisp, leaving 60% of the image totally uncovered and glowing */}
         <div className="absolute inset-0 z-0 bg-gradient-to-r from-[#0c0f14]/92 via-[#0c0f14]/60 via-38% to-transparent to-68% pointer-events-none" />
@@ -111,7 +111,7 @@ export default function HeroSection() {
                 <div className="inline-flex items-center gap-2.5 mb-4">
                   <span className="w-7 h-[2px] bg-gradient-to-r from-[#c5a86a] to-transparent" />
                   <span className="text-[#c5a86a] text-xs sm:text-[13px] font-bold tracking-[2.5px] uppercase">
-                    Advocate • High Court & Supreme Court
+                    Advocate • High Court Counsel
                   </span>
                 </div>
 

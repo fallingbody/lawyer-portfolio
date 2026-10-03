@@ -17,7 +17,7 @@ export default function Footer() {
               Adv. Shweta
             </span>
             <p className="text-[10px] text-stone-400 font-medium tracking-[1.5px] uppercase">
-              High Court & Supreme Court Practice
+              High Court & Appellate Practice
             </p>
           </div>
         </a>

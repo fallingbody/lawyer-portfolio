@@ -1,6 +1,6 @@
-# Advocate Shweta | Supreme Court & High Court Chambers
+# Advocate Shweta | High Court Chambers
 
-A modern, high-performance, and luxury legal portfolio web application built with **Next.js 16 (Turbopack)**, **React 19**, **Tailwind CSS v4**, and **Lucide Icons**. Designed specifically for high-stakes litigation, corporate insolvency, and constitutional law advisory.
+A modern, high-performance, and luxury legal portfolio web application built with **Next.js 16 (Turbopack)**, **React 19**, **Tailwind CSS v4**, and **Lucide Icons**. Designed specifically for high-stakes litigation, corporate insolvency, appellate disputes, and constitutional law advisory.
 
 ---
 

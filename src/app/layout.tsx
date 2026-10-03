@@ -18,9 +18,9 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Adv. Shweta — Advocate & Legal Counsel | High Court & Supreme Court",
+  title: "Adv. Shweta — Advocate & Legal Counsel | High Court Practice",
   description:
-    "Distinguished personal legal practice of Adv. Shweta. Fierce courtroom advocacy, constitutional writs, corporate dispute resolution, and appellate litigation.",
+    "Distinguished legal practice of Adv. Shweta. Fierce courtroom advocacy, constitutional writs, corporate dispute resolution, and appellate litigation across High Courts.",
 };
 
 export default function RootLayout({

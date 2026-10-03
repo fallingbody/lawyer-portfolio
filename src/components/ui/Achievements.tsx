@@ -13,13 +13,13 @@ interface Achievement {
 export default function Achievements() {
   const achievements: Achievement[] = [
     {
-      id: "precedent-article32",
-      title: "Supreme Court Article 32 Precedent Judgment",
+      id: "precedent-article226",
+      title: "High Court Article 226 Precedent Judgment",
       image: "/images/achievement_scotus.jpg",
       description:
-        "Secured a milestone judgment before the Supreme Court bench protecting individual liberty and nullifying ultra-vires executive notifications.",
+        "Secured a landmark writ judgment before the High Court Division Bench protecting civil liberty and quashing arbitrary executive orders.",
       year: "2024",
-      venue: "Supreme Court of India",
+      venue: "High Court of Delhi",
     },
     {
       id: "commercial-resolution",

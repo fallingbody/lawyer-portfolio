@@ -26,12 +26,12 @@ export default function NotableCases() {
     {
       id: "case-2",
       category: "Constitutional Law",
-      title: "Fundamental Liberties Against Retrospective Penalties",
-      forum: "Supreme Court of India (Constitution Bench)",
+      title: "Fundamental Liberties Against Arbitrary State Action",
+      forum: "High Court of Delhi (Division Bench)",
       year: "2023",
       image: "/images/case-2.jpg",
       summary:
-        "Challenged arbitrary retrospective statutory notifications impacting civil liberties and commercial enterprises across multiple High Court jurisdictions.",
+        "Successfully argued landmark Article 226 writ petition protecting fundamental rights and striking down arbitrary retrospective penalties against corporate entities.",
     },
     {
       id: "case-3",

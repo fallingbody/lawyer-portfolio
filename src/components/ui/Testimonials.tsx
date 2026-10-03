@@ -45,11 +45,11 @@ export default function Testimonials() {
     {
       id: "t-3",
       quote:
-        "A fierce defender of constitutional liberties. Her precision in formulating questions of law during our Supreme Court Article 32 petition was truly exceptional.",
+        "A fierce defender of constitutional liberties. Her precision in formulating questions of law during our High Court Article 226 writ petition was truly exceptional.",
       author: "Dr. Ananya Sen",
       role: "Senior Policy Director",
       company: "Civil Liberty Council",
-      forum: "Supreme Court of India (Constitution Bench)",
+      forum: "High Court of Delhi (Division Bench)",
       rating: 5,
     },
     {
