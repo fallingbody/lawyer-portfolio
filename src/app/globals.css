@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+html {
+  background-color: #faf9f6;
+  color: #1a1e24;
+  color-scheme: light;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #faf9f6;
+  color: #1a1e24;
+  overflow-x: clip;
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-serif {
+  font-family: var(--font-serif), Georgia, Cambria, serif;
+}
+
+.font-sans {
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f0eb;
+}
+::-webkit-scrollbar-thumb {
+  background: #d4cfc5;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #c5a86a;
+}
+
+
+/* ==========================================================================
+   BIDIRECTIONAL SCROLL ANIMATIONS (Equal luxury animation on scroll up and down)
+   ========================================================================== */
+
+/* Base transition physics: Luxury cubic bezier with clear 0.85s duration */
+[data-aos] {
+  pointer-events: auto;
+  transition-property: opacity, transform, filter !important;
+  transition-duration: 0.85s !important;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1) !important;
+  will-change: opacity, transform, filter;
+}
+
+/* Default un-animated state: 56px displacement + subtle scale & soft focus */
+[data-aos="fade-up"]:not(.aos-animate) {
+  opacity: 0 !important;
+  transform: translate3d(0, 56px, 0) scale(0.96) !important;
+  filter: blur(4px) !important;
+}
+
+[data-aos="fade-down"]:not(.aos-animate) {
+  opacity: 0 !important;
+  transform: translate3d(0, -56px, 0) scale(0.96) !important;
+  filter: blur(4px) !important;
+}
+
+[data-aos="fade-right"]:not(.aos-animate) {
+  opacity: 0 !important;
+  transform: translate3d(-56px, 0, 0) scale(0.96) !important;
+  filter: blur(4px) !important;
+}
+
+[data-aos="fade-left"]:not(.aos-animate) {
+  opacity: 0 !important;
+  transform: translate3d(56px, 0, 0) scale(0.96) !important;
+  filter: blur(4px) !important;
+}
+
+[data-aos="zoom-in"]:not(.aos-animate) {
+  opacity: 0 !important;
+  transform: scale(0.88) !important;
+  filter: blur(4px) !important;
+}
+
+/* Active animated state: perfectly settled in place, crystal clear */
+[data-aos].aos-animate {
+  opacity: 1 !important;
+  transform: translate3d(0, 0, 0) scale(1) !important;
+  filter: blur(0px) !important;
+}
+
+
