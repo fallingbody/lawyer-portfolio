@@ -97,7 +97,7 @@ export default function HeroSection() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % HERO_SLIDES.length);
-    }, 6000);
+    }, 3500);
     return () => clearInterval(timer);
   }, []);
 
@@ -116,7 +116,7 @@ export default function HeroSection() {
           return (
             <div
               key={slide.image}
-              className={`absolute inset-0 bg-cover bg-no-repeat ${slide.position} transition-opacity duration-1000 ease-in-out will-change-[opacity] ${
+              className={`absolute inset-0 bg-cover bg-no-repeat ${slide.position} transition-opacity duration-700 ease-in-out will-change-[opacity] ${
                 isActive ? "opacity-100 z-0" : "opacity-0 z-0 pointer-events-none"
               }`}
               style={{
@@ -178,22 +178,6 @@ export default function HeroSection() {
                   >
                     Read Bio & Mandate
                   </a>
-                </div>
-
-                {/* Minimalist Slideshow Indicators */}
-                <div className="flex items-center gap-2 mt-8">
-                  {HERO_SLIDES.map((slide, idx) => (
-                    <button
-                      key={slide.image}
-                      onClick={() => setCurrentSlide(idx)}
-                      aria-label={`Go to slide ${idx + 1}`}
-                      className={`h-1.5 rounded-full transition-all duration-500 cursor-pointer ${
-                        idx === currentSlide
-                          ? "w-8 bg-[#c5a86a]"
-                          : "w-2 bg-white/30 hover:bg-white/60"
-                      }`}
-                    />
-                  ))}
                 </div>
               </div>
             </div>
