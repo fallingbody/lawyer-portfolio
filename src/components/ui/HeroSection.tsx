@@ -110,14 +110,16 @@ export default function HeroSection() {
         ========================================================================
       */}
       <section className="relative w-full flex-1 flex items-center overflow-hidden bg-[#11141a] min-h-[580px] lg:min-h-[620px]">
-        {/* Background Slideshow Layer: Smooth Cross-fade between enhanced HD images */}
+        {/* Background Slideshow Layer: Cinematic Dissolve + Ken Burns Scale Effect */}
         {HERO_SLIDES.map((slide, index) => {
           const isActive = index === currentSlide;
           return (
             <div
               key={slide.image}
-              className={`absolute inset-0 bg-cover bg-no-repeat ${slide.position} transition-opacity duration-700 ease-in-out will-change-[opacity] ${
-                isActive ? "opacity-100 z-0" : "opacity-0 z-0 pointer-events-none"
+              className={`absolute inset-0 bg-cover bg-no-repeat ${slide.position} transition-all duration-1000 ease-out will-change-[transform,opacity,filter] ${
+                isActive
+                  ? "opacity-100 scale-100 blur-0 z-0"
+                  : "opacity-0 scale-105 blur-[2px] z-0 pointer-events-none"
               }`}
               style={{
                 backgroundImage: `url('${slide.image}')`,
