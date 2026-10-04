@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useState, useEffect } from "react";
 
 type Pillar = {
   title: string;
@@ -8,6 +10,24 @@ type Pillar = {
   delay: number;
   icon: React.ReactNode;
 };
+
+const HERO_SLIDES = [
+  {
+    image: "/images/adv_shweta_hero.jpg",
+    position: "bg-[center_right_-20px] sm:bg-[center_right] lg:bg-[82%_20%]",
+    alt: "Advocate Shweta Legal Chamber",
+  },
+  {
+    image: "/images/hero_court_hd.jpg",
+    position: "bg-center",
+    alt: "Judicial Court Architecture",
+  },
+  {
+    image: "/images/hero_gavel_hd.jpg",
+    position: "bg-center",
+    alt: "Judicial Gavel & Bench",
+  },
+];
 
 const PILLARS: Pillar[] = [
   {
@@ -42,7 +62,7 @@ const PILLARS: Pillar[] = [
   {
     title: "Courtroom Advocacy",
     description:
-      "Decisive oral arguments and authoritative cross-examinations across High Courts and Apex Benches.",
+      "Decisive oral arguments and authoritative cross-examinations across High Courts and Appellate Benches.",
     variant: "bg-white border-r border-b md:border-b-0",
     delay: 240,
     icon: (
@@ -72,6 +92,15 @@ const PILLARS: Pillar[] = [
 ];
 
 export default function HeroSection() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % HERO_SLIDES.length);
+    }, 6000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <div className="w-full bg-[#11141a] flex flex-col justify-between min-h-screen">
       {/* 
@@ -81,25 +110,33 @@ export default function HeroSection() {
         ========================================================================
       */}
       <section className="relative w-full flex-1 flex items-center overflow-hidden bg-[#11141a] min-h-[580px] lg:min-h-[620px]">
-        {/* Background Image Layer: Clean, Sharp Editorial Presentation */}
-        <div
-          className="absolute inset-0 bg-cover bg-no-repeat bg-[center_right_-20px] sm:bg-[center_right] lg:bg-[82%_20%]"
-          style={{
-            backgroundImage: "url('/images/adv_shweta_hero.jpg')",
-            filter: "brightness(1.08) contrast(1.03)",
-          }}
-        />
+        {/* Background Slideshow Layer: Smooth Cross-fade between enhanced HD images */}
+        {HERO_SLIDES.map((slide, index) => {
+          const isActive = index === currentSlide;
+          return (
+            <div
+              key={slide.image}
+              className={`absolute inset-0 bg-cover bg-no-repeat ${slide.position} transition-opacity duration-1000 ease-in-out will-change-[opacity] ${
+                isActive ? "opacity-100 z-0" : "opacity-0 z-0 pointer-events-none"
+              }`}
+              style={{
+                backgroundImage: `url('${slide.image}')`,
+                filter: "brightness(1.08) contrast(1.03)",
+              }}
+            />
+          );
+        })}
 
-        {/* Luminous Warm Sunlight & Amber Radial Bloom: Illuminates Adv. Shweta & Law Library */}
-        <div className="absolute inset-0 z-0 pointer-events-none bg-[radial-gradient(ellipse_at_78%_35%,rgba(255,238,195,0.30)_0%,rgba(223,195,132,0.15)_35%,transparent_65%)]" />
-        <div className="absolute inset-0 z-0 pointer-events-none bg-[radial-gradient(ellipse_at_25%_25%,rgba(212,175,55,0.15)_0%,transparent_50%)]" />
+        {/* Luminous Warm Sunlight & Amber Radial Bloom: Highlights Court & Chambers */}
+        <div className="absolute inset-0 z-1 pointer-events-none bg-[radial-gradient(ellipse_at_78%_35%,rgba(255,238,195,0.30)_0%,rgba(223,195,132,0.15)_35%,transparent_65%)]" />
+        <div className="absolute inset-0 z-1 pointer-events-none bg-[radial-gradient(ellipse_at_25%_25%,rgba(212,175,55,0.15)_0%,transparent_50%)]" />
 
-        {/* Soft Left Vignette: ONLY covers text area to keep typography crisp, leaving 60% of the image totally uncovered and glowing */}
-        <div className="absolute inset-0 z-0 bg-gradient-to-r from-[#0c0f14]/92 via-[#0c0f14]/60 via-38% to-transparent to-68% pointer-events-none" />
+        {/* Soft Left Vignette: ONLY covers text area to keep typography crisp, leaving 60% of the image glowing */}
+        <div className="absolute inset-0 z-1 bg-gradient-to-r from-[#0c0f14]/94 via-[#0c0f14]/65 via-40% to-transparent to-70% pointer-events-none" />
 
         {/* Subtle Top & Bottom Soft Warm Shading */}
-        <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-black/55 via-black/25 to-transparent pointer-events-none" />
-        <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
+        <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-black/55 via-black/25 to-transparent pointer-events-none z-1" />
+        <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-black/40 to-transparent pointer-events-none z-1" />
 
         {/* Content Container: Wide Desktop Screen with top padding for transparent header */}
         <div className="relative z-10 w-full max-w-[1620px] 2xl:max-w-[1780px] mx-auto px-6 sm:px-10 lg:px-16 pt-28 pb-14 sm:pt-32 sm:pb-16 lg:pt-36 lg:pb-20">
@@ -141,6 +178,22 @@ export default function HeroSection() {
                   >
                     Read Bio & Mandate
                   </a>
+                </div>
+
+                {/* Minimalist Slideshow Indicators */}
+                <div className="flex items-center gap-2 mt-8">
+                  {HERO_SLIDES.map((slide, idx) => (
+                    <button
+                      key={slide.image}
+                      onClick={() => setCurrentSlide(idx)}
+                      aria-label={`Go to slide ${idx + 1}`}
+                      className={`h-1.5 rounded-full transition-all duration-500 cursor-pointer ${
+                        idx === currentSlide
+                          ? "w-8 bg-[#c5a86a]"
+                          : "w-2 bg-white/30 hover:bg-white/60"
+                      }`}
+                    />
+                  ))}
                 </div>
               </div>
             </div>
